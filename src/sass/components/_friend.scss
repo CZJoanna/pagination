@@ -1,0 +1,53 @@
+////////////////////////
+//FRIEND
+.friend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 1.5rem;
+
+  padding: 2.5rem;
+  transition: all 0.4s;
+
+  &:hover {
+    box-shadow: 0 1rem 5rem rgba($color-grey-light-2, 0.2);
+    transform: translateY(-5px);
+  }
+
+  &:hover &__img {
+    transform: scale(1.05) translateY(-5px);
+  }
+
+  &:hover &__seemore {
+    animation: pulsate 1s infinite;
+  }
+
+  &__img {
+    grid-column: 1/-1;
+    display: block;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+
+  &__name {
+    grid-column: 1/-1;
+    color: $color-grey-dark-2;
+    font-family: $font-display;
+    font-size: 2rem;
+  }
+
+  &__seemore {
+    grid-column: 1 / span 1;
+
+    @media only screen and (max-width: $bp-sm) {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  &__add,&__delete {
+    grid-column: 2 / span 1;
+  }
+}
